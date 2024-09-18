@@ -1,0 +1,17 @@
+*{
+    color: azure;
+}
+
+p{
+    font-family: "Comic Sans MS";
+    color: chartreuse;
+}
+
+h1,h2,h3{
+    font-family: SansSerif;
+}
+
+#Bulbasaur{
+    color: fuchsia;
+}
+
