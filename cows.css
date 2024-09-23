@@ -1,0 +1,119 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Open+Sans:wght@400&display=swap');
+
+body {
+    background-color: #2d2b2a;
+    color: #e4d8c3;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Modern Headings */
+h1, h2, h3 {
+    font-family: 'Lora', serif;
+    text-transform: uppercase;
+    color: #bfa27f;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px #000;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #bfa27f;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.75em;
+    margin-bottom: 10px;
+}
+
+/* Links */
+a {
+    color: #d4a373;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #a67c00;
+    text-shadow: 2px 2px 4px #000;
+}
+
+/* Layout */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #3e3d3a;
+    border: 2px solid #524d44;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Borders and Decorations */
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, #bfa27f, #000, #bfa27f);
+}
+
+.bordered {
+    border: 3px solid #7a6752;
+    padding: 10px;
+    margin: 20px 0;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.7);
+}
+
+blockquote {
+    font-style: italic;
+    color: #bfa27f;
+    padding: 10px 20px;
+    border-left: 5px solid #7a6752;
+    background-color: #524d44;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Modern Buttons */
+button {
+    background-color: #524d44;
+    color: #bfa27f;
+    font-family: 'Lora', serif;
+    border: 2px solid #7a6752;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+button:hover {
+    background-color: #3e3b37;
+    color: #d4a373;
+    border-color: #bfa27f;
+}
+
+/* Footer */
+footer {
+    background-color: #2d2b2a;
+    color: #7a6752;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #7a6752;
+}
+
+footer a:hover {
+    color: #d4a373;
+}

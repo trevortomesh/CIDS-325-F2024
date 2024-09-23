@@ -1,5 +1,6 @@
 *{
     color: azure;
+    background-color: black;
 }
 
 p{
@@ -7,7 +8,12 @@ p{
     color: chartreuse;
 }
 
+p{
+    color: darkred;
+}
+
 h1,h2,h3{
+    color: cadetblue;
     font-family: SansSerif;
 }
 
