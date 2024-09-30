@@ -8,6 +8,15 @@ cookie.addEventListener('click', function(){
     scoreDisplay.textContent = score;
     let message = "Your score is: " + score;
     console.log(message);
+    let myLumps = "15"
+    let thing = parseInt(myLumps);
+    //console.log("test");
+    //let thing = 15
+    if(score === 10){
+        alert("Congrats! You've clicked 10 cookies!!!");
+        console.log("My lumps are " + (thing+6));
+
+    }
 })
 
 //score += 1;
