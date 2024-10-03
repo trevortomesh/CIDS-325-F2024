@@ -1,0 +1,10 @@
+body{
+    text-align: center;
+    font-family: "Comic Sans MS";
+}
+
+#cookie{
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+}
