@@ -29,13 +29,15 @@
 
 const scoreDisplay = document.getElementById('score');
 const cookie = document.getElementById('cookie');
+const button = document.getElementById('autoIncrementButton');
+
 let score = 0; //let is used to declare a variable that can change
 // add an event listener to the cookie
-let i = 0;
-while(i < 10){
-    console.log(i);
-    i++;
-}
+// let i = 0;
+// while(i < 10){
+//     console.log(i);
+//     i++;
+//}
 cookie.addEventListener('click', function(){
     score += 1; //increase score
     scoreDisplay.textContent = score;
@@ -45,24 +47,69 @@ cookie.addEventListener('click', function(){
     //let thing = parseInt(myLumps);
     //console.log("test");
     //let thing = 15
-    if(score === 10){
-        alert("Congrats! You've clicked 10 cookies!!!");
-        //console.log("My lumps are " + (thing+6));
-        //console.log(foo);
-        //console.log(x);
-    }
-    if(score > 10){
-        do{
-            score+=1;
-            console.log("Score: " + score);
-        }while(score < 20);
+    // if(score === 10){
+    //     alert("Congrats! You've clicked 10 cookies!!!");
+    //     //console.log("My lumps are " + (thing+6));
+    //     //console.log(foo);
+    //     //console.log(x);
+    // }
+    // if(score > 10){
+    //     do{
+    //         score+=1;
+    //         console.log("Score: " + score);
+    //     }while(score < 20);
+    //
+    // }
+    // do{
+    //     score +=1;
+    //
+    //     if(score === 5){
+    //         console.log("Breaking out of the loop at score 5.");
+    //         break;
+    //     }
+    //     console.log("Score: " + score);
+    // }while(score < 10);
 
-    }
-
-
-
+    // let multiplier = 2;
+    // while(score < 10){
+    //     score += multiplier;
+    //     console.log("Score: " + score + ", Multiplier: " +
+    //     multiplier);
+    //     multiplier+=1;
+    // }
 })
 
+function autoIncrementScore(targetScore){
+    while(score < targetScore) {
+        score += 1;
+        scoreDisplay.textContent = score;
+
+        if (score === targetScore) {
+            console.log("Target score reached: " +
+            targetScore);
+            break;
+        }
+    }
+}
+
+button.addEventListener('click', function(){
+    autoIncrementScore(score+10);
+})
+
+function outerFunction(){
+    let outerVar = "I'm outside!"
+
+    function innerFunction(){
+        console.log(outerVar);
+    }
+    innerFunction()
+}
+outerFunction();
+
+function test(){
+    console.log("yo!");
+}
+test();
 //score += 1;
 
 
