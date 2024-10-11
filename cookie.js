@@ -38,11 +38,13 @@ let score = 0; //let is used to declare a variable that can change
 //     console.log(i);
 //     i++;
 //}
+
 cookie.addEventListener('click', function(){
     score += 1; //increase score
     scoreDisplay.textContent = score;
     let message = "Your score is: " + score;
     console.log(message);
+
     //let myLumps = "15"
     //let thing = parseInt(myLumps);
     //console.log("test");
@@ -81,8 +83,7 @@ cookie.addEventListener('click', function(){
 
 function autoIncrementScore(targetScore){
     while(score < targetScore) {
-        score += 1;
-        scoreDisplay.textContent = score;
+        increase();
 
         if (score === targetScore) {
             console.log("Target score reached: " +
@@ -93,7 +94,13 @@ function autoIncrementScore(targetScore){
 }
 
 button.addEventListener('click', function(){
-    autoIncrementScore(score+10);
+    let dice = Math.random()
+    if(dice < 0.1) {
+        alert("Cheater cheater pumpkin eater!");
+
+        resetScore();
+    }
+    else{autoIncrementScore(score+10);}
 })
 
 function outerFunction(){
@@ -104,12 +111,28 @@ function outerFunction(){
     }
     innerFunction()
 }
-outerFunction();
+//outerFunction();
 
-function test(){
-    console.log("yo!");
+let increase = function(){
+    score +=1;
+    scoreDisplay.textContent = score;
+};
+
+const incrementScore = () => {
+    score+=1;
+    scoreDisplay.textContent = score;
 }
-test();
-//score += 1;
+
+//Function declaration
+function resetScore(){
+    score = 0;
+    scoreDisplay.textContent = score;
+}
+
+//Function expression
+let reset = function(){
+    score = 0;
+    scoreDisplay.textContent = score;
+};
 
 
