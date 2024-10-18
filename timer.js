@@ -1,19 +1,26 @@
-let counter = 10;
+//let counter = 10;
 
 const countDownElement = document.getElementById("countdown");
+const getTimeElement = document.getElementById("input");
+const startButton = document.getElementById("start");
 
-let intervalId = setInterval(function(){
-    counter--;
-    //console.log(countDownElement.textContent);
-    //let counterString = counter.toString();
-    countDownElement.textContent = counter;
+let counter = parseInt(getTimeElement.value);
+console.log(counter);
+startButton.addEventListener("click", function() {
 
-    if(counter === 0){
-        clearInterval(intervalId);
-        alert("Happy New Year!!! 🎉🎉🎉");
-    }
-},1000);
+    let intervalId = setInterval(function () {
+        //console.log(t);
+        counter--;
+        //console.log(countDownElement.textContent);
+        //let counterString = counter.toString();
+        countDownElement.textContent = counter.toString();
 
+        if (counter === 0) {
+            clearInterval(intervalId);
+            alert("Happy New Year!!! 🎉🎉🎉");
+        }
+    }, 1000);
+});
 
 
 // setTimeout(function, delay);
