@@ -92,14 +92,14 @@ console.log(empty.toString);
 // let weirdRabbit = new Rabbit("weird");
 // weirdRabbit.speak("I'm a sexy rabbit!");
 
-class Rabbit{
-    constructor(type) {
-        this.type = type;
-    }
-    speak(line){
-        console.log(`The ${this.type} rabbit says '${line}'`);
-    }
-}
-
-let blackRabbit = new Rabbit("Black");
-blackRabbit.speak("Meow!");
+// class Rabbit{
+//     constructor(type) {
+//         this.type = type;
+//     }
+//     speak(line){
+//         console.log(`The ${this.type} rabbit says '${line}'`);
+//     }
+// }
+//
+// let blackRabbit = new Rabbit("Black");
+// blackRabbit.speak("Meow!");
