@@ -2,14 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Deck of Cards</title>
+    <title>Blackjack</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <div class = "container">
-    <h1>Deck of Cards</h1>
-    <button id="shuffleButton">Shuffle Deck</button>
-    <div id="deckContainer" class="deck"></div>
+    <h1>Blackjack</h1>
+    <!---- Buttons for Game Controls ------>
+    <button id = "dealButton">Deal</button>
+    <button id = "hitButton">Hit</button>
+    <button id = "standButton">Stand</button>
+
+    <!--- Message area for results -------->
+    <div id="gameMessage" class="message"></div>
+
+    <!---- Player and Dealer Hands --------->
+    <div>
+        <h2>Player's Hand</h2>
+        <div id="playerHand" class="hand"></div>
+        <div>Player Score: <span id="playerScore">0</span></div>
+    </div>
+    <div>
+        <h2>Dealer's Hand</h2>
+        <div id="dealerHand" class="hand"></div>
+        <div>Dealer Score: <span id="dealerScore">0</span></div>
+
+    </div>
 </div>
 
 <script src = script.js></script>

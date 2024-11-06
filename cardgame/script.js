@@ -11,6 +11,16 @@ class Card{
     getImagePath(){
         return `images/cards/${this.rank}_of_${this.suit}.png`;
     }
+
+    getValue(){
+        if(['jack', 'queen', 'king'].includes(this.rank)){
+            return 10;
+        }else if (this.rank === 'ace'){
+            return 11;
+        }else {
+            return parseInt(this.rank);
+        }
+    }
 }
 
 
@@ -65,3 +75,12 @@ document.getElementById('shuffleButton').addEventListener('click',() => {
     displayDeck(deck.getCards());
 
 });
+
+
+myCard = new Card('Jack','Diamonds');
+console.log(myCard);
+
+window.onload = function() {
+    // Your JavaScript code here
+    alert(myCard.getValue());
+};
