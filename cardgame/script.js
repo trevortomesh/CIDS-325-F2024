@@ -69,7 +69,15 @@ class Deck{
 
 class BlackJackGame{
     constructor() {
-        //fill in later
+        this.deck = new Deck();
+        this.playerHand = [];
+        this.dealerHand = [];
+        this.playerCardsDisplayed = 0; //for animation
+        this.dealerCardsDisplayed = 0; //for animation
+        this.isGameActive = false;
+        this.hideDealerCard = true;
+        this.setupEventListeners();
+
     }
 
     setupEventListeners(){
@@ -103,7 +111,18 @@ class BlackJackGame{
     }
 
     playerHit(){
-        // fill in later
+        this.playerHand.push(this.deck.deal());
+        this.updateDisplay();
+
+        if(this.calculateScore(this.playerHand) > 21){
+            this.checkForBust();
+        }
+    }
+
+    checkForBust(){
+        this.hideDealerCard = false;
+        this.updateDisplay();
+        this.endGame('Player Bust! Dealer Wins.');
     }
 
     playerStand(){
@@ -113,7 +132,40 @@ class BlackJackGame{
     calculateScore(hand){
         // fill in later
     }
+
+    updateDisplay(){
+        // fill in later
+    }
+
+    displayPlayerHand(container){
+        // fill in later
+    }
+
+    displayDealerHand(container){
+        // fill in later
+    }
+
+    displayCard(card, container, delay=0){
+        // fill in later
+    }
+
+    displayBackCard(container, delay=0){
+        // fill in later
+    }
+
+    determineWinner(){
+        // fill in later
+    }
+
+    endGame(message){
+        // fill in later
+    }
+
+    showMessage(message){
+        // fill in later
+    }
 }
+
 
 
 // function displayDeck(deck) {
