@@ -126,24 +126,66 @@ class BlackJackGame{
     }
 
     playerStand(){
-        // fill in later
+        document.getElementById('hitButton').disabled = true;
+        document.getElementById('standButton').disable = true;
+        this.hideDealerCard = false;
+
+        while(this.calculateScore(this.dealerHand) < 17){
+            this.dealerHand.push(this.deck.deal());
+        }
+
+        document.getElementById('dealerHand').innerHTML = ' ';
+        this.dealerCardsDisplayed = 0;
+        this.updateDisplay();
+        setTimeout(() =>{
+            this.determineWinner();
+        }, 500);
     }
 
     calculateScore(hand){
-        // fill in later
+        let score = hand.reduce((sum, card) => sum + card.getValue(),0);
+        let aceCount = hand.filter(card => card.rank === 'ace').length;
+
+        while(score > 21 && aceCount > 0){
+            score -=10;
+            aceCount -= 1;
+        }
+        return score;
     }
 
     updateDisplay(){
-        // fill in later
+        const playerHandDiv = document.getElementById('playerHand');
+        const dealerHandDiv = document.getElementById('dealerHand');
+
+        this.displayPlayerHand(playerHandDiv);
+        this.displayDealerHand(dealerHandDiv);
+
+        document.getElementById('playerScore').textContent = this.calculateScore(this.playerHand);
+
+        const dealerScore = this.hideDealerCard ? this.calculateScore([this.dealerHand[0]]) :
+            this.calculateScore(this.dealerHand);
+
+        document.getElementById('dealerScore').textContent = dealerScore;
     }
 
     displayPlayerHand(container){
-        // fill in later
+        for(let i = this.playerCardsDisplayed; i < this.playerHand.length; i++){
+            this.displayCard(this.playerHand[i], container, i*200);
+        }
+        this.playerCardsDisplayed = this.playerHand.length;
     }
 
     displayDealerHand(container){
-        // fill in later
+        for(let i = this.dealerCardsDisplayed; i < this.dealerHand.length; i++) {
+            if (i === 1 && this.hideDealerCard) {
+                this.displayBackCard(container, i * 200);
+            } else {
+                this.displayCard(this.dealerHand[i], container, i * 200);
+            }
+        }
+        this.dealerCardsDisplayed = this.dealerHand.length;
     }
+
 
     displayCard(card, container, delay=0){
         // fill in later
