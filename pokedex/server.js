@@ -21,6 +21,42 @@ app.get('/', (req,res) =>{
     `);
 });
 
+//Pokedex route -- List all pokemon
+app.get('/pokedex', (req,res) =>{
+    const pokedexList = pokedex.map(
+        pokemon => `
+        <div style = "border: 1px solid #ddd; padding: 10px;
+        margin: 10px; text-align: center;">
+        <img src = "${pokemon.image}">
+        </div>
+        `
+    );
+});
+
+//Contact route
+app.get('/contact', (req, res) => {
+    res.send(`
+    <h1>Contact Us</h1>
+    <p>Email us at: pokemonhub@example.com</p>
+`);
+});
+
+app.get('/about', (req, res) => {
+    res.send(`
+    <h1>About Pokemon Trainer Hub</h1>
+    <p>This hub helps trainers manager their Pokemon
+        and learn about the world of Pokemon!</p>
+        `);
+});
+
+//404 Error Handler
+app.use((req,res) => {
+    res.status(404).send(
+        `<h1> 404 - Route Not Found </h1>
+        <p>You've walked into tall grass without a Pokemon!</p>
+    `);
+});
+
 app.listen(PORT, () =>{
     console.log(`server running at http://localhost:${PORT}`);
 });
